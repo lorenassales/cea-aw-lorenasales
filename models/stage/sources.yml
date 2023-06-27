@@ -1,0 +1,95 @@
+
+version: 2
+
+sources:
+  - name: sap_adw
+    description: Source from Adventure Works sales database.
+    schema: sap_adw
+    tables:
+      
+      - name: product
+        description: Chart of information about products.        
+        columns:
+          - name: productid
+            description: It is a primary key from product chart.
+
+      - name: productsubcategory
+        description: Chart of information about product subcategory.        
+        columns:
+          - name: productsubcategoryid
+            description: It is a primary key from product subcategory chart.
+
+      - name: productmodel
+        description: Chart of information about product model.        
+        columns:
+          - name: productmodelid
+            description: It is a primary key from product model chart.
+
+      - name: productcategory
+        description: Chart of information about product category.        
+        columns:
+          - name: productcategoryid
+            description: It is a primary key from product category chart.
+
+      - name: address
+        description: Chart of information about addresses.        
+        columns:
+          - name: addressid
+            description: It is a primary key from addresses chart.
+
+      - name: stateprovince
+        description: Chart of information about state province.        
+        columns:
+          - name: stateprovinceid
+            description: It is a primary key from state province chart.
+
+      - name: countryregion
+        description: Chart of information about country.        
+        columns:
+          - name: countryregioncode
+            description: It is a primary key from country chart.
+
+      - name: person
+        description: Chart of information about people in general.        
+        columns:
+          - name: businessentityid
+            description: It is a foreign key from BusinessEntityID as a unique key from person chart.
+
+      - name: customer
+        description: Chart of information about customer.        
+        columns:
+          - name: customerid
+            description: It is a foreign key from BusinessEntityID as a unique key from customer chart.
+
+      - name: store
+        description: Chart of information about stores and sales person assidned to the customer.        
+        columns:
+          - name: businessentityid
+            description: It is a foreign key from BusinessEntityID as a unique key from store chart.
+
+      - name: productvendor
+        description: Chart of information about purchased history product cost.
+
+      - name: vendor
+        description: Chart of information about verndores.        
+        columns:
+          - name: businessentityid
+            description: It is a foreign key from BusinessEntityID as a unique key from vendor chart.
+
+      - name: purchaseorderdetail
+        description: Chart of information about purchase details.        
+        columns:
+          - name: purchaseorderdetailid
+            description: It is a primary key from purchase order details chart.
+
+      - name: purchaseorderheader
+        description: Chart of information about purchases.        
+        columns:
+          - name: purchaseorderid
+            description: It is a primary key from purchases chart.
+
+      - name: employee
+        description: Chart of information about employees.        
+        columns:
+          - name: businessentityid
+            description: It is a foreign key from BusinessEntityID as a unique key from employees chart.             
