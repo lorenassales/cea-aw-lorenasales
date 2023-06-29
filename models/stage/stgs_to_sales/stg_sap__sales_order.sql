@@ -1,5 +1,5 @@
 with
-    sales_order_details as (
+    sales_order as (
         select *
         from {{ source('sap_adw', 'salesorderheader') }}
     )
@@ -33,7 +33,7 @@ with
             , cast(taxamt as numeric) as tax_amt
             , cast(freight as numeric) as freight
             , cast(totaldue as numeric) as total_due
-        from sales_order_details
+        from sales_order
     )
 select *
 from changes
