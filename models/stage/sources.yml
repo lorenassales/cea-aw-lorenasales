@@ -92,4 +92,40 @@ sources:
         description: Chart of information about employees.        
         columns:
           - name: businessentityid
-            description: It is a foreign key from BusinessEntityID as a unique key from employees chart.             
+            description: It is a foreign key from BusinessEntityID as a unique key from employees chart.
+
+      - name: salesperson
+        description: Chart of information about sales person.        
+        columns:
+          - name: businessentityid
+            description: It is a foreign key from BusinessEntityID as a unique key from sales person chart.
+
+      - name: creditcard
+        description: Chart of information about credit card.        
+        columns:
+          - name: creditcardid
+            description: It is a primary key from credit card chart.   
+
+      - name: salesreason
+        description: Chart of information about possible sales reasons.
+        columns:
+          - name: salesreasonid
+            description: It is a primary key from sales reason chart.
+
+      - name: salesorderheadersalesreason
+        description: Chart of information about the reason to that sale.
+        columns:
+          - name: salesorderid
+            description: It is a foreign key from SalesOrderHeader to make a link with sales reason.
+
+      - name: salesorderdetail
+        description: Chart of information about the sales order details.
+        columns:
+          - name: salesorderdetailid
+            description: It is a primary key from sales order details chart.
+
+      - name: salesorderheader
+        description: Chart of information about the sales order.
+        columns:
+          - name: salesorderid
+            description: It is a primary key from sales order chart.
