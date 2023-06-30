@@ -19,6 +19,7 @@ with
             a.address_id
             , s.state_id
             , c.country_id
+            , s.territory_id
             , a.city_name
             , s.state_name
             , c.country_name

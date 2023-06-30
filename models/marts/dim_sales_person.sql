@@ -25,6 +25,7 @@ with
             , p.person_name as name
             , e.job_title
             , e.marital_status
+            , e.gender
             , e.salaried_flag
             , sp.goal
             , sp.commission_pct
