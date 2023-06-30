@@ -19,6 +19,7 @@ with
             , so.sales_person_id
             , so.territory_id
             , so.credit_card_id
+            , so.bill_address_id
             , so.ship_address_id
             , so.order_date
             , so.max_delivery_date

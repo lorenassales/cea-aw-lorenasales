@@ -6,7 +6,7 @@ with
 
     , stg_header_sales_reasons as (
         select *
-        from {{ ref('sta_sap__header_sales_reasons') }}
+        from {{ ref('stg_sap__header_sales_reasons') }}
     )
 
     , dim_sales_reasons as (

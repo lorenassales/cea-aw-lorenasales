@@ -29,6 +29,11 @@ with
         from {{ ref('dim_sales_reasons') }}
     )
 
+    , dim_special_offers as (
+        select *
+        from {{ ref('dim_special_offers') }}
+    )
+
     , int_sales_order_details as (
         select *
         from {{ ref('int_sales_order_details') }}
@@ -39,10 +44,10 @@ with
             sd.sales_order_detail_id
             , sd.sales_order_id
             , p.product_sk as product_fk
-            , sp.special_offer_sk as special_offer_fk
+            , so.special_offer_sk as special_offer_fk
             , c.customer_sk as customer_fk 
             , sp.sales_person_sk as sales_person_fk
-            , a.address_sk as address_fk
+            , a.address_sk as address_fk 
             , cc.credit_card_sk as credit_card_fk
             , sd.ship_address_id
             , sd.order_date
@@ -50,9 +55,7 @@ with
             , sd.ship_date
             , c.customer_name
             , sp.name as sales_person
-            , p.product_name
-            , p.category_name
-            , p.subcategory_name
+            , p.product_name         
             , sd.order_qty
             , sd.unit_price
             , sd.discount_pct
@@ -64,10 +67,10 @@ with
             , sd.total_due
         from int_sales_order_details sd
         left join dim_addresses a on 
-            sd.territory_id = a.territory_id
+            sd.bill_address_id = a.address_id
         left join dim_credit_cards cc on
             sd.credit_card_id = cc.credit_card_id
-        left join dim_customers c on 
+         left join dim_customers c on 
             sd.customer_id = c.customer_id
         left join dim_products p on
             sd.product_id = p.product_id
@@ -75,7 +78,8 @@ with
             sd.sales_person_id = sp.sales_person_id
         left join dim_sales_reasons ss on 
             sd.sales_order_id = ss.sales_order_id
-
+        left join dim_special_offers so on 
+            sd.special_offer_id = so.special_offer_id
     )
 select
     {{ dbt_utils.generate_surrogate_key(['sales_order_detail_id', 'sales_order_id']) }} as sales_sk
