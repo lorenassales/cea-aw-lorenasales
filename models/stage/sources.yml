@@ -137,4 +137,10 @@ sources:
             description: It is a primary key from sales territory chart.                
           - name: continent
             description: This column has been renamed from group to continent. It shows the sales region by continents.
+
+      - name: specialoffer
+        description: Chart of information about the offers.
+        columns:
+          - name: specialofferid
+            description: It is a primary key from special offers chart.
             
