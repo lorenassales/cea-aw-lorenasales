@@ -129,3 +129,12 @@ sources:
         columns:
           - name: salesorderid
             description: It is a primary key from sales order chart.
+
+      - name: salesterritory
+        description: Chart of information about the sales territory.        
+        columns:
+          - name: territoryid
+            description: It is a primary key from sales territory chart.                
+          - name: continent
+            description: This column has been renamed from group to continent. It shows the sales region by continents.
+            
