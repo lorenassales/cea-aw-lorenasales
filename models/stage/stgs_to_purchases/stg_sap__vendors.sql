@@ -6,7 +6,7 @@ with
 
     , changes as (
         select
-            businessentityid
+            cast(businessentityid as int) as vendor_id
             , cast(name as string) as vendor_name
             , cast(preferredvendorstatus as boolean) as is_preferred
         from vendors

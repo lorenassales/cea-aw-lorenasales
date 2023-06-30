@@ -6,13 +6,12 @@ with
 
     , changes as (
         select
-            cast(productid as int) as product_id                   
+            cast(productid as int) as product_id
+            , cast(businessentityid as int) as vendor_id                
             , cast(standardprice as numeric) as standard_price
         from product_vendors
     )
-select
-    product_id
-    , avg(standard_price) as avg_standard_price
+select *    
 from changes
-group by product_id
+
     
