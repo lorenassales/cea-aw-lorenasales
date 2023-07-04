@@ -5,7 +5,7 @@ models:
   - name: dim_addresses
     description: This is a dimension table to this project with addresses registers.
     columns:
-      - name: sales_sk
+      - name: address_sk
         description: This is a surrogate key to this table.
         tests:
           - unique

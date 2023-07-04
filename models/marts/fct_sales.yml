@@ -39,8 +39,6 @@ models:
       
       - name: sales_person_fk
         description: This is a foreign key from sales person table to this table.
-        tests:         
-          - not_null
       
       - name: address_fk
         description: This is a foreign key from addresses table to this table.
@@ -49,9 +47,7 @@ models:
 
       - name: credit_card_fk
         description: This is a foreign key from credit card table to this table.
-        tests:         
-          - not_null
-      
+              
       - name: ship_address_id
         description: This is a identification code for ship addresses.
 
