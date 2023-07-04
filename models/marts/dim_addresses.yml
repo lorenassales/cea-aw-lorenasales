@@ -1,0 +1,33 @@
+
+version: 2
+
+models:
+  - name: dim_addresses
+    description: This is a dimension table to this project with addresses registers.
+    columns:
+      - name: sales_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: address_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: state_id
+        description: This is a identification code for state.
+
+      - name: country_id
+        description: This is a identification code for country.
+
+      - name: city_name
+        description: This column brings city names.
+
+      - name: state_name
+        description: This column brings state names.
+
+      - name: country_name
+        description: This column brings country names.

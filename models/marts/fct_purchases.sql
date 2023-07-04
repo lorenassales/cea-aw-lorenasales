@@ -9,6 +9,11 @@ with
         from {{ ref('dim_employees') }}
     )
 
+    , dim_products as (
+        select *
+        from {{ ref('dim_products') }}
+    )
+
     , int_purchase_order_details as (
         select *
         from {{ ref('int_purchase_order_details') }}
@@ -18,9 +23,9 @@ with
         select
             pd.purchase_order_detail_id
             , pd.purchase_order_id
-            , pd.product_id
-            , e.employee_id
-            , v.vendor_id
+            , p.product_sk as product_fk
+            , e.employee_sk as employee_fk
+            , v.vendor_sk as vendor_fk
             , pd.order_date
             , pd.ship_date
             , v.vendor_name           
@@ -39,6 +44,8 @@ with
             pd.vendor_id = v.vendor_id
         left join dim_employees e on 
             pd.employee_id = e.employee_id
+        left join dim_products p on
+            pd.product_id = p.product_id
     )
 select 
     {{ dbt_utils.generate_surrogate_key(['purchase_order_detail_id', 'purchase_order_id']) }} as purchase_sk

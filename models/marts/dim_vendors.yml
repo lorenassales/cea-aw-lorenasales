@@ -1,0 +1,24 @@
+
+version: 2
+
+models:
+  - name: dim_vendors
+    description: This is a dimension table to this project with vendor registers.
+    columns:
+      - name: vendor_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: vendor_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: vendor_name
+        description: This column brings the vendor name.
+
+      - name: is_preferred
+        description: This column brings which vendor is preferred.

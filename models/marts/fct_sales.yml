@@ -1,0 +1,104 @@
+
+version: 2
+
+models:
+  - name: fct_sales
+    description: This is a fact table to this project with sales registers.
+    columns:
+      - name: sales_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: sales_order_detail_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: sales_order_id
+        description: This is a primary key to this table.
+        tests:         
+          - not_null
+          
+      - name: product_fk
+        description: This is a foreign key from products table to this table.
+        tests:         
+          - not_null
+      
+      - name: special_offer_fk
+        description: This is a foreign key from special offers table to this table.
+        tests:         
+          - not_null
+
+      - name: customer_fk
+        description: This is a foreign key from customers table to this table.
+        tests:         
+          - not_null
+      
+      - name: sales_person_fk
+        description: This is a foreign key from sales person table to this table.
+        tests:         
+          - not_null
+      
+      - name: address_fk
+        description: This is a foreign key from addresses table to this table.
+        tests:         
+          - not_null
+
+      - name: credit_card_fk
+        description: This is a foreign key from credit card table to this table.
+        tests:         
+          - not_null
+      
+      - name: ship_address_id
+        description: This is a identification code for ship addresses.
+
+      - name: order_date
+        description: This column brings sales order date.
+
+      - name: max_delivery_date
+        description: This column brings maximum date to delivery that order.
+
+      - name: ship_date
+        description: This column brings date the order was shipped to the customer.
+
+      - name: customer_name
+        description: This column brings customer name that sale was made.
+
+      - name: sales_person
+        description: This column brings sales person name who made that sale.
+
+      - name: product_name
+        description: This column brings product names.
+
+      - name: order_qty
+        description: This column brings how many products there are in that order.
+
+      - name: unit_price
+        description: This column brings unit price for that product.
+
+      - name: discount_pct
+        description: This column brings the discount over that sale.
+
+      - name: order_status
+        description: This column brings the order situation as In process; Approved; Backordered; Rejected; hipped or Cancelled.
+
+      - name: sold_by
+        description: This column brings if the sale was made online or by a sales person.
+
+      - name: order_status
+        description: This column brings if the order is Pending; Approved; Rejected or Complete.
+
+      - name: subtotal
+        description: This column brings how much that order will cost without tax and freight.
+
+      - name: tax_amt
+        description: This column brings the value of tax for that order.
+
+      - name: freight
+        description: This column brings the value of freight for that order..
+
+      - name: total_due
+        description: This column brings sum between subtotal, tax_amt and freight.

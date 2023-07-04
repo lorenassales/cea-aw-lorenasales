@@ -1,0 +1,45 @@
+
+version: 2
+
+models:
+  - name: dim_employees
+    description: This is a dimension table to this project with employees registers.
+    columns:
+      - name: employee_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: employee_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: name
+        description: This column brings the employee name.
+
+      - name: type
+        description: This column brings if that person is just a employee or sales person.
+
+      - name: job_title
+        description: This column brings the job title to that person.
+
+      - name: birth_date
+        description: This column brings employee birth date.
+
+      - name: hire_date
+        description: This column brings the hire date.
+
+      - name: marital_status
+        description: This column brings if that person is maried or not. "M" for Maried and "S" for single.
+
+      - name: gender
+        description: This column brings if that person is male or female. "M" for male and "F" for female.
+
+      - name: salaried_flag
+        description: This column shows whether that person is paid hourly or salaried.
+
+      - name: employee_status
+        description: This column brings if that person still ative in company or not.

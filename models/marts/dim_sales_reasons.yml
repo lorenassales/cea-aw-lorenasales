@@ -1,0 +1,21 @@
+
+version: 2
+
+models:
+  - name: dim_sales_reasons
+    description: This is a dimension table to this project with sales reason registers.
+    columns:
+      - name: sales_order_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: sales_order_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: reason
+        description: This column brings the sales reason.
