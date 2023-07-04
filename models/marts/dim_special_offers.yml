@@ -1,0 +1,27 @@
+
+version: 2
+
+models:
+  - name: dim_special_offers
+    description: This is a dimension table to this project with special offer registers.
+    columns:
+      - name: special_offer_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: special_offer_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: description
+        description: This column brings the condition for thar offer.
+
+      - name: discount_pct
+        description: This column brings the discount percent for that offer.
+
+      - name: offer_reason
+        description: This column brings the reason why that offer exist.

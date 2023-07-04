@@ -1,0 +1,20 @@
+
+version: 2
+
+models:
+  - name: dim_credit_cards
+    description: This is a dimension table to this project with credit cards registers.
+    columns:
+      - name: credit_card_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique          
+          
+      - name: credit_card_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: card_type
+        description: This column brings the name of credit card company.

@@ -6,7 +6,7 @@ with
     
     , changes as (
         select 
-            cast(creditcardid as int) as creditcard_id
+            cast(creditcardid as int) as credit_card_id
             , cast(cardtype as string) as card_type
         from credit_cards
     )

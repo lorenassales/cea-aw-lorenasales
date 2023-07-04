@@ -1,5 +1,5 @@
 with
-    purchase_order_header as (
+    purchase_order_headers as (
         select *
         from {{ source('sap_adw', 'purchaseorderheader') }}
     )
@@ -22,7 +22,7 @@ with
             , cast(subtotal as numeric) as subtotal
             , cast(taxamt as numeric) as tax_amt
             , cast(freight as numeric) as freight
-        from purchase_order_header
+        from purchase_order_headers
     )
 select *
 from changes

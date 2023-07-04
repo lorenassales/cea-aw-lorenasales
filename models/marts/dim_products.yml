@@ -1,0 +1,56 @@
+
+version: 2
+
+models:
+  - name: dim_products
+    description: This is a dimension table to this project with product registers.
+    columns:
+      - name: product_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: product_name
+        description: This column brings the product name.
+
+      - name: category_name
+        description: This column brings the category product.
+
+      - name: subcategory_name
+        description: This column brings the subcategory product.
+
+      - name: model_name
+        description: This column brings the model product.
+
+      - name: purchased_or_made
+        description: This column brings if that product is purchased or manufactured in-house.
+
+      - name: is_salable
+        description: If that product is salable or not.
+
+      - name: product_color
+        description: This column brings the product color.
+
+      - name: standard_cost
+        description: The product cost.
+
+      - name: list_price
+        description: The standard selling price
+
+      - name: class
+        description: If it is low, medium or high.
+
+      - name: style
+        description: If it is Universal, male or female model.
+
+
+
+
+

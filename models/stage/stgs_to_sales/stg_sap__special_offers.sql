@@ -9,7 +9,7 @@ with
             cast(specialofferid as int) as special_offer_id
             , cast(description as string) as description
             , cast(discountpct as numeric) as discount_pct
-            , cast(type as string) as for_whom
+            , cast(type as string) as offer_reason
         from special_offers
     )
 select *

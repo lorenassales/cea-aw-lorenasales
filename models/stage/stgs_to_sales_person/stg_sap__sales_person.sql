@@ -7,6 +7,7 @@ with
     , changes as (
         select
             cast(businessentityid as int) as sales_person_id
+            , cast(territoryid as int) as territory_id
             , cast(salesquota as numeric) as goal
             , cast(commissionpct as numeric) as commission_pct
         from sales_person

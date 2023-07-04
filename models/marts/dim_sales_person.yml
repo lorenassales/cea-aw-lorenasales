@@ -1,0 +1,50 @@
+
+version: 2
+
+models:
+  - name: dim_sales_person
+    description: This is a dimension table to this project with sales person registers.
+    columns:
+      - name: sales_person_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: sales_person_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: name
+        description: This column brings the sales person name.
+
+      - name: job_title
+        description: This column brings the job title to that person.
+
+      - name: marital_status
+        description: This column brings if that person is maried or not. "M" for Maried and "S" for single.
+
+      - name: gender
+        description: This column brings if that person is male or female. "M" for male and "F" for female.
+
+      - name: salaried_flag
+        description: This column shows whether that person is paid hourly or salaried.
+
+      - name: goal
+        description: This column brings the quote for that sales person.
+
+      - name: commission_pct
+        description: This column brings commision percent received per sale.
+
+      - name: country_name
+        description: This column brings the country where that person is responsible for selling.
+
+      - name: continent
+        description: This column brings the continent where that person is responsible for selling.
+
+
+
+
+
