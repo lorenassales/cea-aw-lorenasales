@@ -62,10 +62,9 @@ with
             , sd.discount_pct
             , sd.order_status
             , sd.sold_by            
-            , sd.subtotal
-            , sd.tax_amt
-            , sd.freight
-            , sd.total_due
+            , sd.subtotal -- calculated on int_sales_order_details
+            , subtotal * tax_amt_pct as tax_amt
+            , subtotal * freight_pct as freight
         from int_sales_order_details sd
         left join dim_addresses a on 
             sd.bill_address_id = a.address_id
@@ -85,4 +84,5 @@ with
 select
     {{ dbt_utils.generate_surrogate_key(['sales_order_detail_id', 'sales_order_id']) }} as sales_sk
     , *
+    , subtotal + tax_amt + freight as total_due
 from fct_sales
