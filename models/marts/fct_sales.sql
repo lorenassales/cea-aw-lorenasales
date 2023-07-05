@@ -54,6 +54,7 @@ with
             , sd.max_delivery_date
             , sd.ship_date
             , c.customer_name
+            , a.continent
             , sp.name as sales_person
             , p.product_name         
             , sd.order_qty
