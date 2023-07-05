@@ -33,7 +33,7 @@ with
                 when "W" then "Womens"
                 when "H" then "Mens"
                 when "U" then "Universal"
-            else "non"
+            else "Universal"
             end as style 
         from products
     )
