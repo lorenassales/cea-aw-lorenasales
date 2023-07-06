@@ -60,6 +60,8 @@ with
             , sd.order_qty
             , sd.unit_price
             , sd.discount_pct
+            , p.standard_cost
+            , p.list_price
             , sd.order_status
             , sd.sold_by            
             , sd.subtotal -- calculated on int_sales_order_details
