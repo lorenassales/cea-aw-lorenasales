@@ -1,0 +1,42 @@
+version: 2
+
+models:
+
+  - name: dim_dates
+    description: This table contains information about the dates that events occur for all source.
+    columns:
+      - name: date
+        description: Unique date.
+        tests:
+          - not_null
+          - unique
+
+      - name: day_month
+        description: Day of month.
+
+      - name: nb_month
+        description: Month number of column date.
+
+      - name: year
+        description: Year of column date.
+
+      - name: quarter
+        description: Quarter of column date.
+
+      - name: day_year
+        description: Day year of column date.
+
+      - name: week
+        description: Week of the year from column column date.
+
+      - name: day_week
+        description: Day of week from column date.
+
+      - name: month
+        description: Name of the month from column date.
+
+      - name: month_year
+        description: Month and year from column date, example Jan-2020.
+
+      - name: quarter_year
+        description: Quarter of the year and year from column date, example T1-2020.
