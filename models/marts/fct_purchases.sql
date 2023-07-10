@@ -36,6 +36,7 @@ with
             , pd.rejected_qty            
             , pd.revision_qty
             , pd.order_status
+            , p.is_salable
             , pd.subtotal
             , pd.tax_amt
             , pd.freight
