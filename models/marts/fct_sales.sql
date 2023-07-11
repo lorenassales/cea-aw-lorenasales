@@ -59,7 +59,11 @@ with
                 when sp.name is null then "Sold Online"
             else sp.name
             end as sales_person
-            , p.product_name         
+            , p.product_name
+            , case
+                when ss.reason is null then "No Informed"
+            else ss.reason
+            end as sales_reason        
             , sd.order_qty
             , sd.unit_price
             , sd.discount_pct
