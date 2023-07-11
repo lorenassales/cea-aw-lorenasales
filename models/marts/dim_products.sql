@@ -23,8 +23,14 @@ with
         select
             p.product_id
             , p.product_name
-            , pc.category_name
-            , ps.subcategory_name
+            , case
+                when pc.category_name is null then "No Category"
+            else pc.category_name
+            end as category_name 
+            , case
+                when ps.subcategory_name is null then "No Subcategory"
+            else ps.subcategory_name
+            end as subcategory_name
             , pm.model_name
             , p.purchased_or_made
             , p.is_salable
