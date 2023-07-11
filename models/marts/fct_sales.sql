@@ -55,7 +55,10 @@ with
             , sd.ship_date
             , c.customer_name
             , a.continent
-            , sp.name as sales_person
+            , case 
+                when sp.name is null then "Sold Online"
+            else sp.name
+            end as sales_person
             , p.product_name         
             , sd.order_qty
             , sd.unit_price
