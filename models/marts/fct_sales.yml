@@ -63,6 +63,15 @@ models:
       - name: customer_name
         description: This column brings customer name that sale was made.
 
+      - name: continent
+        description: This column brings the continent name for that sale.
+
+      - name: country_name
+        description: This column brings the country name for that sale.
+
+      - name: store_name
+        description: This column brings the store name for that sale.
+
       - name: sales_person
         description: This column brings sales person name who made that sale.
 

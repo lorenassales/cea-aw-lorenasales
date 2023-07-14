@@ -24,6 +24,11 @@ with
         from {{ ref('dim_sales_person') }}
     )
 
+    , dim_stores as (
+        select *
+        from {{ ref('dim_stores') }}
+    )
+
     , dim_sales_reasons as (
         select *
         from {{ ref('dim_sales_reasons') }}
@@ -49,6 +54,7 @@ with
             , sp.sales_person_sk as sales_person_fk
             , a.address_sk as address_fk 
             , cc.credit_card_sk as credit_card_fk
+            , stores.store_sk as store_fk
             , sd.ship_address_id
             , sd.order_date
             , sd.max_delivery_date
@@ -58,6 +64,8 @@ with
             else c.customer_name
             end as customer_name
             , a.continent
+            , a.country_name
+            , stores.store_name
             , case 
                 when sp.name is null then "Sold Online"
             else sp.name
@@ -88,6 +96,8 @@ with
             sd.product_id = p.product_id
         left join dim_sales_person sp on
             sd.sales_person_id = sp.sales_person_id
+        left join dim_stores stores on
+            sd.sales_person_id = stores.sales_person_id
         left join dim_sales_reasons ss on 
             sd.sales_order_id = ss.sales_order_id
         left join dim_special_offers so on 
