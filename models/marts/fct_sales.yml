@@ -69,9 +69,6 @@ models:
       - name: country_name
         description: This column brings the country name for that sale.
 
-      - name: store_name
-        description: This column brings the store name for that sale.
-
       - name: sales_person
         description: This column brings sales person name who made that sale.
 
