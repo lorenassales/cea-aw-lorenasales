@@ -18,8 +18,14 @@ with
         select
             c.customer_id
             , s.store_id
-            , p.person_name as customer_name
-            , s.store_name                                     
+            , case
+                when p.person_name is null then "Name no Informed"
+            else p.person_name
+            end as customer_name            
+            , case
+                when s.store_name is null then "Online"
+            else s.store_name 
+            end as store_name                                               
         from stg_customers c
         left join stg_people p on
             c.customer_id = p.person_id

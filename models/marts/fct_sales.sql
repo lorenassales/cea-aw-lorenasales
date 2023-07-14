@@ -53,10 +53,7 @@ with
             , sd.order_date
             , sd.max_delivery_date
             , sd.ship_date
-            , case
-                when c.customer_name is null then "Name no Informed"
-            else c.customer_name
-            end as customer_name
+            , c.customer_name
             , a.continent
             , case 
                 when sp.name is null then "Sold Online"
