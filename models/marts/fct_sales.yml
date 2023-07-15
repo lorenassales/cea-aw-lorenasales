@@ -36,6 +36,11 @@ models:
         description: This is a foreign key from customers table to this table.
         tests:         
           - not_null
+
+      - name: customer_id
+        description: This is a foreign key from customers table to this table. Because there are many customer register without name, so this number makes research more easier
+        tests:         
+          - not_null
       
       - name: sales_person_fk
         description: This is a foreign key from sales person table to this table.
