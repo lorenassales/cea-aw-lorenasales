@@ -45,7 +45,8 @@ with
             , sd.sales_order_id
             , p.product_sk as product_fk
             , so.special_offer_sk as special_offer_fk
-            , c.customer_sk as customer_fk 
+            , c.customer_sk as customer_fk
+            , c.customer_id 
             , sp.sales_person_sk as sales_person_fk
             , a.address_sk as address_fk 
             , cc.credit_card_sk as credit_card_fk
